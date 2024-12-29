@@ -14,8 +14,8 @@
 :root {
     --nav-height: 4.5rem;
     --nav-width: 100%;
-    --background: rgb(10,16,19);
-    --gradient-primary: linear-gradient(180deg, rgba(10,16,19,1) 0%, rgba(0,0,0,1) 100%);
+    /* --background: rgb(10,16,19);
+    --gradient-primary: linear-gradient(180deg, rgba(10,16,19,1) 0%, rgba(0,0,0,1) 100%); */
   }
   
 
@@ -40,6 +40,8 @@
     height: 20px;
     background: rgba(255, 255, 255, 0.2);
     animation: animate 38s linear infinite;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 

@@ -3,7 +3,7 @@ import { motion, useSpring, useScroll, useTransform } from "motion/react"
 
 const Presentation = () => {
   return (
-    <div className='presentation'>
+    <div className='base-content padding-default presentation'>
         <div>
             <motion.h2
             initial={{opacity: 0}}

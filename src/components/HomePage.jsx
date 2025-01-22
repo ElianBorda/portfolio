@@ -12,9 +12,12 @@ const HomePage = () => {
 
   const ref = useRef(null)
 
-  const { scrollYProgress } = useScroll({container: ref})
+  const { scrollYProgress } = useScroll({
+    container: ref
+  })
 
-  const yTransform = useTransform(scrollYProgress, [0, 1], [600, -700])
+  
+  const yTransform = useTransform(scrollYProgress, [0, 1], [0, 0])
   const backgroundOpacity = useTransform(scrollYProgress, [0, 800], [0, 800])
   const rotateTransform = useTransform(scrollYProgress, [0, 1], [-40, 40])
 
@@ -32,7 +35,7 @@ const HomePage = () => {
 
   return (
     <>
-      <motion.div
+      {/* <motion.div
                 id="scroll-indicator"
                 style={{
                     zIndex: 100,
@@ -45,37 +48,48 @@ const HomePage = () => {
                     originX: 0,
                     backgroundColor: "red",
                 }}
-            />
-      <div className='base-page'>
-          <Introduction />
+            /> */}
+      <Introduction />
+      <div className='base-content base-page'>
           <BGAnimate />
-          <div className='base-nav'></div>
-          <div className='base-body' ref={ref}>
+          <Presentation /> 
+          <div className='base-content padding-default about'>
+            <div className='about-info'>
+              <h2>About me</h2>
+              <p>
+                I am a FullStack Developer with experience in web development, I have knowledge in technologies such as React, Node.js, Express, MongoDB, among others. I am passionate about programming and I am always looking to learn new technologies and improve my skills.
+              </p>  
+            </div>
+            <div className='img-perfil'>
+              <motion.img 
+                src={elianImg} 
+                alt="img-perfil" 
+                style={{
+                  y: yTransform,
+                  rotate,
+                }}/>
+                <BlocksFollow scroll={scrollYProgress}/>
+            </div>
+          </div>
+          <div className='base-content'>
+            <div className='content-tech'>
+                <h1>Tecnologias que trabajo</h1>
+                <Carrousel/>
+            </div>
+          </div>
+          <Proyects scrollProyect={scrollYProgress}/>
+          <div className='base-content c' >
+
+          </div>
+          
+          {/* <div className='base-body' ref={ref}>
               <motion.div className='base-content'>
-                <Presentation /> 
-                <div className='about'>
-                  <div className='about-info'>
-                    <h2>About me</h2>
-                    <p>
-                      I am a FullStack Developer with experience in web development, I have knowledge in technologies such as React, Node.js, Express, MongoDB, among others. I am passionate about programming and I am always looking to learn new technologies and improve my skills.
-                    </p>  
-                  </div>
-                  <div className='img-perfil'>
-                    <motion.img 
-                      src={elianImg} 
-                      alt="img-perfil" 
-                      style={{
-                        y: yTransform,
-                        rotate,
-                      }}/>
-                      <BlocksFollow scroll={scrollYProgress}/>
-                  </div>
-                </div>
+                
                 <div className='content-tech'>
                   <h1>Tecnologias que trabajo</h1>
                   <Carrousel/>
                 </div>
-                <Proyects/>
+                <Proyects scrollProyect={scrollYProgress}/>
                 <motion.div
                   style={{
                     position: "absolute",
@@ -90,7 +104,7 @@ const HomePage = () => {
                   }}
                 />
               </motion.div>
-          </div>        
+          </div>         */}
       </div>
     </>
   )

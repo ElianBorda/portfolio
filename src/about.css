@@ -2,9 +2,9 @@
     width: 400px;
     height: 400px;
     border-radius: 30px;
-  }
-  
-  .about > .img-perfil > div {
+}
+
+.about > .img-perfil > div {
     z-index: -1;
     position: absolute;
     background: rgba(255, 255, 255, 0.555);
@@ -12,7 +12,27 @@
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
     border-radius: 30px;
     backdrop-filter: blur(10px);
-  }
+}
+
+.about {
+    flex-direction: row;
+    margin-top: 6rem;  
+}
+
+.about-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 50%;
+}
+
+.about-info > h2 {
+    font-size: 5rem;
+}
+
+.about-info > p {
+    font-size: 2rem;
+}
   
 .about > .img-perfil > div:nth-of-type(1) {
     top: -150px;

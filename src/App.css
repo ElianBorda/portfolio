@@ -38,6 +38,10 @@
     
 }
 
+.c {
+  background-color: red;
+}
+
 html, body {
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
@@ -46,42 +50,26 @@ html, body {
 body {
   background: var(--background);
   background:var(--gradient-primary);
+  overflow-y: auto;
 }
 
 /* Template */
 
 .base-page {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100vh;
-}
-
-/* .base-nav {
-  z-index: -1;
-  display: flex;
   position: relative;
-  width: var(--nav-width);
-  height: var(--nav-height);
-  flex-shrink: 0;
-} */
-
-.base-body {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  padding: 0 13rem;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .base-content {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: auto;
+  min-height: 100vh;
 }
+
+.padding-default {
+  padding: 0 13rem;
+} 
 
 /* Content */
 
@@ -111,12 +99,8 @@ body {
 }
 
 .presentation {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  height: 100vh;
   gap: 9rem;
-  width: 100%;
 }
 
 .presentation > div > h1{
@@ -133,7 +117,7 @@ body {
 
 .transition {
   z-index: 1000000;
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100vh;
   overflow: hidden;
@@ -175,26 +159,6 @@ body {
   background-color: var(--background);
 }
 
-.about {
-  display: flex;
-  margin-top: 6rem;  
-}
-
-.about-info {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  width: 50%;
-}
-
-.about-info > h2 {
-  font-size: 5rem;
-}
-
-.about-info > p {
-  font-size: 2rem;
-}
-
 .tech {
   z-index: -1;
   display: flex;
@@ -231,30 +195,69 @@ body {
   width: 50%;
 }
 
-.fullscreen {
-  width: 100%;
-  min-height: 100vh;
+.proyects {
+  display: none;
+  background-color: black;
+  gap: 3rem;
+  overflow: hidden;
 }
 
-.proyects {
+.proyects > h1 {
+  margin-top: 2rem;
+  align-self: center;
+}
+
+.proyect-atom {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  width: 100%;
+  height: 14rem;
+  background-color: rgb(26, 106, 106);
+}
+
+.proyect-atom > h2 {
+  height: 4rem;
+}
+
+.desc-proy {
+  display: -webkit-box;       
+  -webkit-line-clamp: 3;     
+  line-clamp: 3;
+  -webkit-box-orient: vertical; 
+  overflow: hidden;          
+  text-overflow: ellipsis;
+  height: 4rem;
+}
+
+.flex {
   display: flex;
   justify-content: space-between;
-  gap: 3rem;
-  width: 100%;
 }
 
 .line {
   position: relative;
   height: 100%;
-  width: 0.3rem;
+  width: 0.5rem;
   background-color: #f1f1f151;
+  margin: 0 1rem;
 }
 
 .line-load {
   position: absolute;
-  height: 100%;
-  width: 0.3rem;
+  width: 100%;
+  height: 2px;
   background-color: red;
+}
+
+.proyect-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  height: 100%;
+  background-color: #00000000;
 }
 
 @keyframes scroll {

@@ -3,128 +3,70 @@ import { motion, useSpring, useScroll, useTransform } from "motion/react"
 import LineLoadProyect from './LineLoadProyect'
 import SimpleProyectAtom from './SimpleProyectAtom';
 import { desc, video } from 'motion/react-client';
+import BGAnimateCircle from './BGAnimateCircle';
+import useLayerFollow from '../hooks/useLayerFollow';
+import proyects from '../data/proyects.json'
 
-const Proyects = ({scrollProyect}) => {
-
-    const [jsonProyects, setJsonProyects] = useState([
-        {
-            title: 'MOTOR DE BUSQUEDA DE INMOBILIARIAS',
-            desc: 'Desarrollo de una plataforma especializada en la búsqueda de propiedades para venta y alquiler. El proyecto centraliza información actualizada de múltiples fuentes, ofreciendo a los usuarios una experiencia unificada y eficiente para explorar propiedades inmobiliarias. Incluye funcionalidades como filtros avanzados de búsqueda, integración con APIs REST, y un diseño responsivo orientado a mejorar la experiencia del usuario en cualquier dispositivo.',
-            lang: ['React', 'Node', 'MongoDB'],
-            visual: {
-                img: [
-                    'https://i.ibb.co/7Y0rWf4/1.png',
-                    'https://i.ibb.co/7Y0rWf4/2.png',
-                    'https://i.ibb.co/7Y0rWf4/3.png'
-                ],
-                video: [
-                    'https://www.youtube.com/watch?v=7e90gBu4pas',
-                ]
-            },
-            date: '2021',
-            simpleDesc: 'Plataforma especializada en la búsqueda de propiedades para venta y alquiler.',
-        },
-        {
-            title: 'MOTOR DE BUSQUEDA DE INMOBILIARIAS',
-            desc: 'Desarrollo de una plataforma especializada en la búsqueda de propiedades para venta y alquiler. El proyecto centraliza información actualizada de múltiples fuentes, ofreciendo a los usuarios una experiencia unificada y eficiente para explorar propiedades inmobiliarias. Incluye funcionalidades como filtros avanzados de búsqueda, integración con APIs REST, y un diseño responsivo orientado a mejorar la experiencia del usuario en cualquier dispositivo.',
-            lang: ['React', 'Node', 'MongoDB'],
-            visual: {
-                img: [
-                    'https://i.ibb.co/7Y0rWf4/1.png',
-                    'https://i.ibb.co/7Y0rWf4/2.png',
-                    'https://i.ibb.co/7Y0rWf4/3.png'
-                ],
-                video: [
-                    'https://www.youtube.com/watch?v=7e90gBu4pas',
-                ]
-            },
-            date: '2021',
-            simpleDesc: 'Plataforma especializada en la búsqueda de propiedades para venta y alquiler.',
-        },
-        {
-            title: 'MOTOR DE BUSQUEDA DE INMOBILIARIAS',
-            desc: 'Desarrollo de una plataforma especializada en la búsqueda de propiedades para venta y alquiler. El proyecto centraliza información actualizada de múltiples fuentes, ofreciendo a los usuarios una experiencia unificada y eficiente para explorar propiedades inmobiliarias. Incluye funcionalidades como filtros avanzados de búsqueda, integración con APIs REST, y un diseño responsivo orientado a mejorar la experiencia del usuario en cualquier dispositivo.',
-            lang: ['React', 'Node', 'MongoDB'],
-            visual: {
-                img: [
-                    'https://i.ibb.co/7Y0rWf4/1.png',
-                    'https://i.ibb.co/7Y0rWf4/2.png',
-                    'https://i.ibb.co/7Y0rWf4/3.png'
-                ],
-                video: [
-                    'https://www.youtube.com/watch?v=7e90gBu4pas',
-                ]
-            },
-            date: '2021',
-            simpleDesc: 'Plataforma especializada en la búsqueda de propiedades para venta y alquiler.',
-        },
-        {
-            title: 'MOTOR DE BUSQUEDA DE INMOBILIARIAS',
-            desc: 'Desarrollo de una plataforma especializada en la búsqueda de propiedades para venta y alquiler. El proyecto centraliza información actualizada de múltiples fuentes, ofreciendo a los usuarios una experiencia unificada y eficiente para explorar propiedades inmobiliarias. Incluye funcionalidades como filtros avanzados de búsqueda, integración con APIs REST, y un diseño responsivo orientado a mejorar la experiencia del usuario en cualquier dispositivo.',
-            lang: ['React', 'Node', 'MongoDB'],
-            visual: {
-                img: [
-                    'https://i.ibb.co/7Y0rWf4/1.png',
-                    'https://i.ibb.co/7Y0rWf4/2.png',
-                    'https://i.ibb.co/7Y0rWf4/3.png'
-                ],
-                video: [
-                    'https://www.youtube.com/watch?v=7e90gBu4pas',
-                ]
-            },
-            date: '2021',
-            simpleDesc: 'Plataforma especializada en la búsqueda de propiedades para venta y alquiler.',
-        },
-    ])
+const Proyects = ({ refC }) => {
+    // const refC = useRef(null);
     
-
-    const ref = useRef(null);
-    const { scrollYProgress } = useScroll({target: ref, offset: ["end end", "start start"]});
-    const transform = useTransform(scrollProyect, [0, 1], [2700, 0]);
-    const y = useSpring(transform, {
-        stiffness: 1000,
-        damping: 100,
-        restDelta: 0.001,
-    })
+    const { transformSpring } = useLayerFollow(refC, ["start end", "end start"], [0, 1], [0, -800])
 
   return (
-        <motion.div 
-            className='base-content padding-default proyects' 
-            style={{
-                position: 'absolute',
-                y
-            }}
-            ref={ref}>
-            <h1>Proyectos</h1>
-            <div className='flex'>
-                <div className='proyect-content'>
-                    {
-                        jsonProyects.map((proyect, index) => {
-                            return (
-                                <SimpleProyectAtom
-                                    key={index}
-                                    proy={proyect}
-                                />
-                            )
-                        })
-                    }
+        <>
+            <motion.div 
+                className='base-content padding-default proyects' 
+                style={{
+                    // position: 'absolute',
+                    y: transformSpring
+                }}
+                ref={refC}>
+                <h1 className='gradient-text'>Proyectos</h1>
+                <div className='flex'>
+                    <div className='proyect-content'>
+                        {
+                            proyects.proyLeft.map((proyect, index) => {
+                                return (
+                                    <>
+                                        <SimpleProyectAtom
+                                            key={index}
+                                            proy={proyect}
+                                        />
+                                        <SimpleProyectAtom
+                                            key={index}
+                                            proy={proyect}
+                                            style='void'
+                                        />
+
+                                    </>
+                                )
+                            })
+                        }
+                    </div>
+                    <LineLoadProyect refC={refC}/>
+                    <div className='proyect-content'>
+                        {
+                            proyects.proyRight.map((proyect, index) => {
+                                return (
+                                    <>
+                                        <SimpleProyectAtom
+                                            key={index}
+                                            proy={proyect}
+                                            style='void'
+                                        />
+                                        <SimpleProyectAtom
+                                            key={index}
+                                            proy={proyect}
+                                        />                                        
+                                    </>
+                                )
+                            })
+                        }
+                    </div>
                 </div>
-                <LineLoadProyect scrollProyect={scrollYProgress}/>
-                <div className='proyect-content'>
-                    {
-                        jsonProyects.map((proyect, index) => {
-                            return (
-                                <SimpleProyectAtom
-                                    key={index}
-                                    proy={proyect}
-                                />
-                            )
-                        })
-                    }
-                </div>
-            </div>
-            
-        </motion.div>
+            </motion.div>
+            <BGAnimateCircle refC={ refC }/>
+        </>
     )
 }
 

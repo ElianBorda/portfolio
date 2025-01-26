@@ -7,10 +7,13 @@ import elianImg from '../imgs/elian.webp'
 import Proyects from './Proyects'
 import Presentation from './Presentation'
 import BlocksFollow from './BlocksFollow'
+import BGAnimateCircle from './BGAnimateCircle'
+import Layer from './Layer'
 
 const HomePage = () => {
 
   const ref = useRef(null)
+  const ref2 = useRef(null);
 
   const { scrollYProgress } = useScroll({
     container: ref
@@ -35,20 +38,6 @@ const HomePage = () => {
 
   return (
     <>
-      {/* <motion.div
-                id="scroll-indicator"
-                style={{
-                    zIndex: 100,
-                    scaleX,
-                    position: "fixed",
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    height: 5,
-                    originX: 0,
-                    backgroundColor: "red",
-                }}
-            /> */}
       <Introduction />
       <div className='base-content base-page'>
           <BGAnimate />
@@ -71,16 +60,31 @@ const HomePage = () => {
                 <BlocksFollow scroll={scrollYProgress}/>
             </div>
           </div>
-          <div className='base-content'>
-            <div className='content-tech'>
-                <h1>Tecnologias que trabajo</h1>
-                <Carrousel/>
-            </div>
+          <div className='content-tech'>
+              <h1>Tecnologias que trabajo</h1>
+              <Carrousel/>
           </div>
-          <Proyects scrollProyect={scrollYProgress}/>
-          <div className='base-content c' >
-
-          </div>
+          <Proyects refC={ref2}/>
+          
+          <Layer refC={ref2}>
+            
+            <h1> HOLA COMO ESTAS</h1>
+            <h1> HOLA COMO ESTAS</h1>
+            <h1> HOLA COMO ESTAS</h1>
+            <h1> HOLA COMO ESTAS</h1>
+            <h1> HOLA COMO ESTAS</h1>
+            <h1> HOLA COMO ESTAS</h1>
+            <h1> HOLA COMO ESTAS</h1>
+            <h1> HOLA COMO ESTAS</h1>
+            <h1> HOLA COMO ESTAS</h1>
+            <h1> HOLA COMO ESTAS</h1>
+            <h1> HOLA COMO ESTAS</h1>
+            <h1> HOLA COMO ESTAS</h1>
+            
+            
+          </Layer>
+          
+          
           
           {/* <div className='base-body' ref={ref}>
               <motion.div className='base-content'>

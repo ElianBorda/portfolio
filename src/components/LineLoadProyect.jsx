@@ -1,18 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { motion, useSpring, useScroll, useTransform } from "framer-motion"
+import { motion, useSpring, useScroll, useTransform, transform } from "framer-motion"
+import useLayerFollow from '../hooks/useLayerFollow';
 
-const LineLoadProyect = ({scrollProyect}) => {
+const LineLoadProyect = ({refC}) => {
 
+  const { transformSpring } = useLayerFollow(
+    refC, 
+    ["start end", "end start"], 
+    [0.2, 0.579], 
+    [0, 800], 
+    { stiffness: 1000, damping: 100 })
   
-  const sTransform = useTransform(scrollProyect, [1, 0], [0, 1151]);
-
-  const scaleY = useSpring(sTransform, {
-    stiffness: 500,
-    damping: 50,
-    // restDelta: 0.001,
-})
-  
-
   return (
         <div className='line'>
             <motion.div 
@@ -25,7 +23,7 @@ const LineLoadProyect = ({scrollProyect}) => {
                 left: 0,
                 right: 0,
                 originY: 0,
-                scaleY 
+                scaleY: transformSpring, 
               }} 
             />
         </div>

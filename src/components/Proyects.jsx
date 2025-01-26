@@ -6,6 +6,7 @@ import { desc, video } from 'motion/react-client';
 import BGAnimateCircle from './BGAnimateCircle';
 import useLayerFollow from '../hooks/useLayerFollow';
 import proyects from '../data/proyects.json'
+import SimpleProyectAtomVoid from './SimpleProyectAtomVoid';
 
 const Proyects = ({ refC }) => {
     // const refC = useRef(null);
@@ -32,7 +33,7 @@ const Proyects = ({ refC }) => {
                                             key={index}
                                             proy={proyect}
                                         />
-                                        <SimpleProyectAtom
+                                        <SimpleProyectAtomVoid
                                             key={index}
                                             proy={proyect}
                                             style='void'
@@ -49,7 +50,7 @@ const Proyects = ({ refC }) => {
                             proyects.proyRight.map((proyect, index) => {
                                 return (
                                     <>
-                                        <SimpleProyectAtom
+                                        <SimpleProyectAtomVoid
                                             key={index}
                                             proy={proyect}
                                             style='void'

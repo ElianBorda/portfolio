@@ -291,7 +291,8 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(53deg, rgba(101,104,113,1) 0%, rgba(160,165,176,1) 40%, rgba(213,217,227,1) 86%, rgba(255,255,255,1) 100%);
+  
+  background: linear-gradient(53deg, rgba(160,165,176,1) 0%, rgba(213,217,227,1) 50%, rgba(255,255,255,1) 100%);
   -webkit-background-clip: text; 
   -webkit-text-fill-color: transparent; 
   background-clip: text; 

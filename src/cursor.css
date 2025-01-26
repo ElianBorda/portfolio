@@ -1,21 +1,23 @@
-/* styles.css */
 
-/* Estilo básico del puntero, un círculo rojo */
+
+
 .custom-cursor {
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    background-color: red;
-    pointer-events: none; /* Hace que el puntero no interfiera con los clics */
-    transform: translate(-50%, -50%); /* Centra el puntero */
-    transition: width 0.2s ease, height 0.2s ease; /* Transición suave para el tamaño */
-    z-index: 9999; /* Asegura que el puntero esté por encima de otros elementos */
+    pointer-events: none; 
+    transform: translate(-50%, -50%); 
+    transition: width 0.2s ease, height 0.2s ease; 
+    z-index: 9999; 
+    background-color: white;
+    mix-blend-mode: difference; 
+    border: 2px solid black; 
   }
   
-  /* Estilo cuando el puntero está sobre un elemento que cambia a "dedo" */
+  
   .custom-cursor.large {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
   }
   

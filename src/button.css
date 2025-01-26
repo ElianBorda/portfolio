@@ -6,6 +6,11 @@
     margin: 0;
 }
 
+.nav-button {
+    font-weight: bold;
+    font-size: medium;
+}
+
 .border-primary-btn {
     position: relative;
     border: 1px solid var(--primary);

@@ -46,7 +46,7 @@ const HomePage = () => {
             <div className='about-info'>
               <h2>About me</h2>
               <p>
-                I am a FullStack Developer with experience in web development, I have knowledge in technologies such as React, Node.js, Express, MongoDB, among others. I am passionate about programming and I am always looking to learn new technologies and improve my skills.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem maxime corrupti molestias dolor, illo in deleniti consequatur similique esse! In culpa laudantium voluptas quasi nostrum deleniti aspernatur odit quae praesentium.
               </p>  
             </div>
             <div className='img-perfil'>

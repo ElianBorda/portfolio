@@ -13,7 +13,7 @@ const SimpleProyectAtom = ({proy, style}) => {
             className={`simple-proyect ${style} gradient-text`}>
             <h2>{proy.title}</h2>
             <p className='desc-proy'>{proy.simpleDesc}</p>
-            <div>{proy.lang.map((tec, index) => <span key={index}>{tec}</span>)}</div>
+            <div>{proy.lang.map((tec, index) => <span key={index}>{tec} </span>)}</div>
             <button className='default-btn-style border-primary-btn'>
                 <span className='gradient-text'>Ver detalle</span>
             </button>

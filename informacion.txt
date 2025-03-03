@@ -1,0 +1,16 @@
+Informacion de portafolio:
+
+1. Titulo: IAlquila.
+Lenguajes: Python, Kotlin, JavaScript, CSS, HTML.
+Tecnologias: React, Spring Boot, MongoDB, Axios.
+Descripción: Plataforma enfocado en la busqueda de alquiler o ventas de propiedades en Argentina.
+
+2. Titulo: App de block de notas.
+Lenguajes: Java, JavaScript, CSS, HTML.
+Tecnologias: React, Spring Boot, MongoDB, Axios.
+Descripción: Aplicacion web de un block de notas. Las notas se pueden crear, eliminar, editar. Ademas se puede filtrar para poder buscar notas. 
+
+3. Titulo: ChatBot de asistente de viajes con IA. 
+Lenguajes: TypeScript.
+Tecnologias: Express, LangChain, Axios.
+Descripción: El Asistente de Viajes es un bot con inteligencia artificial que te ayuda a responder consultas sobre destinos, sus climas y recomendación de equipaje.

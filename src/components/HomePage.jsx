@@ -83,32 +83,6 @@ const HomePage = () => {
             
             
           </Layer>
-          
-          
-          
-          {/* <div className='base-body' ref={ref}>
-              <motion.div className='base-content'>
-                
-                <div className='content-tech'>
-                  <h1>Tecnologias que trabajo</h1>
-                  <Carrousel/>
-                </div>
-                <Proyects scrollProyect={scrollYProgress}/>
-                <motion.div
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    backgroundColor: "black",
-                    zIndex: -1,
-                    pointerEvents: "none", 
-                    opacity: backgroundOpacity,
-                  }}
-                />
-              </motion.div>
-          </div>         */}
       </div>
     </>
   )
